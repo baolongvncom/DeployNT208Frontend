@@ -21,7 +21,7 @@ const MessageContextProvider = (props) => {
     const [currentUserId, setCurrentUserId] = useState(null);
 
     useEffect(() => {
-        const newSocket = io.connect('/',
+        const newSocket = io.connect('https://deploynt208backend.onrender.com/',
         {
             auth: {
                 token: localStorage.getItem('auth-token')
