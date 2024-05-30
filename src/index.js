@@ -7,6 +7,7 @@ import  ShopContextProvider  from './Context/ShopContext';
 import MessageContextProvider from './Context/MessageContext';
 import AuthenticationContextProvider  from './Context/AuthenticationContext';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 if (process.env.NODE_ENV === 'production') {
   disableReactDevTools();
