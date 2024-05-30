@@ -1,0 +1,27 @@
+.product-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-template-rows: repeat(4, 2fr);
+    grid-gap: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    overflow: hidden;
+}
+
+.product-grid div {
+    width: 100px;
+    margin-right: 5px;
+}
+
+.product-grid .product-name {
+    
+}
+
+.product-grid .product-item p {
+    width: 300px;
+    text-align: right;
+    color: #374151;
+    font-size: 10px;
+    font-weight: 600;
+}
