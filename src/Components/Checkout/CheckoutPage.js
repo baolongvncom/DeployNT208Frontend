@@ -90,7 +90,7 @@ const CheckoutPage = () => {
             return;
         }
         
-        await fetch('/order', {
+        await fetch('https://deploynt208backend.onrender.com/order', {
             method: 'POST',
             headers:{
                 Accept:'application/form-data',

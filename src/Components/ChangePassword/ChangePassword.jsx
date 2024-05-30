@@ -14,7 +14,7 @@ const ChangePassword = () => {
   const changePassword = async () =>{
     console.log("changePassword Function Excuted",formData);
     let responseData;
-    await fetch('/changepassword',{
+    await fetch('https://deploynt208backend.onrender.com/changepassword',{
       method:'POST',
       headers:{
         Accept:'application/form-data',

@@ -63,7 +63,7 @@ const HomePage = (props) => {
 
     formData.append("query_img", e.target.files[0]);
 
-    await fetch("/imagesearch", {
+    await fetch("https://deploynt208backend.onrender.com/imagesearch", {
       method: "POST",
       body: formData,
     })

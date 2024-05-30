@@ -10,7 +10,7 @@ const AdminListProduct = () => {
   const [allProducts, setAllProducts] = useState([]);
 
   const fetchProducts = async () => {
-    await fetch('/allproducts').then((response) => response.json())
+    await fetch('https://deploynt208backend.onrender.com/allproducts').then((response) => response.json())
     .then((data) => {
       setAllProducts(data);
     });
@@ -21,7 +21,7 @@ const AdminListProduct = () => {
   }, [])
 
   const remove_product = async (product_id)=> {
-    await fetch('/removeproduct',{
+    await fetch('https://deploynt208backend.onrender.com/removeproduct',{
       method:'POST',
       headers:{
         Accept:'application/json',

@@ -63,7 +63,7 @@ const AdminUpdateProductPage = () => {
         {   let formData = new FormData();
             formData.append('product', image);
 
-            await fetch('/upload', {
+            await fetch('https://deploynt208backend.onrender.com/upload', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -75,7 +75,7 @@ const AdminUpdateProductPage = () => {
             // Delete old image
             if (responseData.success)
             {
-                await fetch('/deleteimage', {
+                await fetch('https://deploynt208backend.onrender.com/deleteimage', {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ const AdminUpdateProductPage = () => {
             updatedProduct.image = responseData.image_url;
             const image_filename = responseData.image_url.substring(responseData.image_url.lastIndexOf('/') + 1);
             console.log(updatedProduct);
-            await fetch('/updateproduct', {
+            await fetch('https://deploynt208backend.onrender.com/updateproduct', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ const AdminUpdateProductPage = () => {
             // retrain model
             if (image)
                 {
-                    await fetch('/retrain', {
+                    await fetch('https://deploynt208backend.onrender.com/retrain', {
                         method: 'POST',
                         body: JSON.stringify({image_filename: image_filename}),
                         headers: {

@@ -60,7 +60,7 @@ const AdminAddProduct = () => {
         let formData = new FormData();
         formData.append('product', image);
 
-        await fetch('/upload', {
+        await fetch('https://deploynt208backend.onrender.com/upload', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -75,7 +75,7 @@ const AdminAddProduct = () => {
 
             const image_filename = responseData.image_url.substring(responseData.image_url.lastIndexOf('/') + 1);
             console.log(product);
-            await fetch('/addproduct', {
+            await fetch('https://deploynt208backend.onrender.com/addproduct', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ const AdminAddProduct = () => {
             }).catch((err) => console.log(err));
 
             // retrain model
-            await fetch('/retrain', {
+            await fetch('https://deploynt208backend.onrender.com/retrain', {
                 method: 'POST',
                 body: JSON.stringify({image_filename: image_filename}),
                 headers: {

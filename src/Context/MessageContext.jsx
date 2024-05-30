@@ -48,7 +48,7 @@ const MessageContextProvider = (props) => {
         console.log('test context');
 
         async function getMessage() {
-            await fetch('/getmessages',{
+            await fetch('https://deploynt208backend.onrender.com/getmessages',{
                 method:'GET',
                 headers:{
                     Accept:'application/form-data',
@@ -61,7 +61,7 @@ const MessageContextProvider = (props) => {
 
         async function getAllUsers() {
             try {
-                await fetch('/allusers',{
+                await fetch('https://deploynt208backend.onrender.com/allusers',{
                             method:'GET',
                             headers:{
                             'auth-token':`${localStorage.getItem('auth-token')}`,
@@ -74,7 +74,7 @@ const MessageContextProvider = (props) => {
         }
 
         async function getAdminMessages() {
-            await fetch('/admingetmessages',{
+            await fetch('https://deploynt208backend.onrender.com/admingetmessages',{
                 method:'GET',
                 headers:{
                     'auth-token':`${localStorage.getItem('auth-token')}`,

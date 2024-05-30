@@ -11,12 +11,12 @@ const ShopContextProvider = (props) => {
     const [orderList, setOrderList] = useState([]);
 
     useEffect(()=>{
-        fetch('/allproducts')
+        fetch('https://deploynt208backend.onrender.com/allproducts')
         .then((response)=>response.json())
         .then((data)=>setAll_Product(data))
     
         if(localStorage.getItem('auth-token')){
-            fetch('/getcart',{
+            fetch('https://deploynt208backend.onrender.com/getcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -27,7 +27,7 @@ const ShopContextProvider = (props) => {
             }).then((response)=>response.json())
             .then((data)=>setCartItems(data));
 
-            fetch('/getinfo',{
+            fetch('https://deploynt208backend.onrender.com/getinfo',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -37,7 +37,7 @@ const ShopContextProvider = (props) => {
             }).then((response)=>response.json())
             .then((data)=>setUser(data));
 
-            fetch('/getorder',{
+            fetch('https://deploynt208backend.onrender.com/getorder',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -56,7 +56,7 @@ const ShopContextProvider = (props) => {
     const addToCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]: itemId in prev ? prev[itemId] + 1 : 1}));
         if(localStorage.getItem('auth-token')){
-            fetch('/addtocart',{
+            fetch('https://deploynt208backend.onrender.com/addtocart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -75,7 +75,7 @@ const ShopContextProvider = (props) => {
             return rest;
             });
         if(localStorage.getItem('auth-token')){
-            fetch('/removeallfromcart',{
+            fetch('https://deploynt208backend.onrender.com/removeallfromcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -98,7 +98,7 @@ const ShopContextProvider = (props) => {
             }
           });
         if(localStorage.getItem('auth-token')){
-            fetch('/removefromcart',{
+            fetch('https://deploynt208backend.onrender.com/removefromcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',

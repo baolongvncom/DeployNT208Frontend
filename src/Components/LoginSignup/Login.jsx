@@ -19,7 +19,7 @@ const Login = () => {
   const login = async () =>{
     console.log("Login Function Excuted",formData)
     let responseData;
-    await fetch('/login',{
+    await fetch('https://deploynt208backend.onrender.com/login',{
       method:'POST',
       headers:{
         Accept:'application/form-data',

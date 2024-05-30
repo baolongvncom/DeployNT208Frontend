@@ -10,7 +10,7 @@ const AuthenticationContextProvider = (props) => {
 
     useEffect(() => {
             async function checkAdmin() {
-                await fetch('/isadmin', {
+                await fetch('https://deploynt208backend.onrender.com/isadmin', {
                     method: 'GET',
                     headers: {
                         'auth-token': authToken,

@@ -24,7 +24,7 @@ const RelatedProducts = (imageUrl) => {
     // Append the blob to the formData
     formData.append("query_img", blob, "image.png");
 
-    await fetch("/imagesearch", {
+    await fetch("https://deploynt208backend.onrender.com/imagesearch", {
       method: "POST",
       body: formData,
     })

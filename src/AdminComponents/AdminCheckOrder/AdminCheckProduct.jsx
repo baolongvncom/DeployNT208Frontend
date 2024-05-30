@@ -22,7 +22,7 @@ const AdminCheckOrder = () => {
   const [allOrders, setAllOrders] = useState([]);
 
   const getAllOrders = async () => {
-    const response = await fetch("/getallorder", {
+    const response = await fetch("https://deploynt208backend.onrender.com/getallorder", {
       method: "GET",
       headers: {
         Accept: "application/form-data",
@@ -50,7 +50,7 @@ const AdminCheckOrder = () => {
   };
 
   const handleConfirm = async (id) =>{
-    const confirmResponse = await fetch("/confirmorder", {
+    const confirmResponse = await fetch("https://deploynt208backend.onrender.com/confirmorder", {
       method: "POST",
       headers: {
         Accept: "application/form-data",

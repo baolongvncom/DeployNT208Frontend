@@ -42,7 +42,7 @@ const signup = async () =>{
     }
     console.log("signup Function Excuted",formData);
     let responseData;
-    await fetch('/signup',{
+    await fetch('https://deploynt208backend.onrender.com/signup',{
       method:'POST',
       headers:{
         Accept:'application/form-data',

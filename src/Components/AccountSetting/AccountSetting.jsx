@@ -26,7 +26,7 @@ const SetChange = async () =>{
 
     console.log("signup Function Excuted",formData);
     let responseData;
-    await fetch('/changeinfo',{
+    await fetch('https://deploynt208backend.onrender.com/changeinfo',{
       method:'POST',
       headers:{
         Accept:'application/form-data',
