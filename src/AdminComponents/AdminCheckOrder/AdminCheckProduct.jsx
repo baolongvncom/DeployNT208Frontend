@@ -14,7 +14,7 @@ const AdminCheckOrder = () => {
     },
   };
 
-  const {all_product, allOrders} = useContext(ShopContext);
+  const {all_product, allOrders, setAllOrders} = useContext(ShopContext);
   const [viewOrderProduct, setViewOrderProduct] = useState({products: {}});
 
   const [isModalOpen, setModalOpen] = useState(false);
@@ -67,7 +67,14 @@ const AdminCheckOrder = () => {
     if (!confirmData.success) {
       alert("Order Confirmation Failed");
     }
-    await getAllOrders();
+    await fetch('https://deploynt208backend.onrender.com/getallorder',{
+                method:'GET',
+                headers:{
+                    Accept:'application/form-data',
+                    'Content-Type':'application/json',
+                },
+            }).then((response)=>response.json())
+            .then((data)=>setAllOrders(data));
   };
 
   const handleDelete = (id) => {
