@@ -14,18 +14,24 @@ if (process.env.NODE_ENV === 'production') {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <React.StrictMode>
   <AuthenticationContextProvider>
     <ShopContextProvider>
       
       
       <MessageContextProvider>
-      <React.StrictMode>
-      <App />
-      </React.StrictMode>
+      
+      <BrowserRouter>
+        <Routes>
+          <Route path="/*" element={<App/>} />
+        </Routes>
+      </BrowserRouter>
+      
       </MessageContextProvider>
       
     </ShopContextProvider>
     </AuthenticationContextProvider>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

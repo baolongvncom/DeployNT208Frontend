@@ -38,8 +38,7 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <BrowserRouter>
+    <div>  
         {isAdmin ? <AdminNavBar /> : <Navbar />}
         {isAdmin ? <AdminSidebar /> : <></>}
         <Routes>
@@ -77,7 +76,6 @@ function App() {
           <Route path="orderpage" element={<OrderPage />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
     </div>
   );
 }
