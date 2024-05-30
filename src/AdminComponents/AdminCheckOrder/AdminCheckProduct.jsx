@@ -30,13 +30,16 @@ const AdminCheckOrder = () => {
       },
     });
     const data = await response.json();
-    console.log("getallorder data: ", data);
     setAllOrders(data);
   };
 
   useEffect(() => async () => {
     await getAllOrders();
   }, []);
+
+  useEffect(() => {
+    console.log("allOrders: ", allOrders);
+  }, [allOrders]);
 
   const handleOpenModal = (orderProducts) => {
     if (orderProducts) {
