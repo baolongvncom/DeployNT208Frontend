@@ -110,7 +110,7 @@ const CheckoutPage = () => {
         "data-sdk-integration-source": "integrationbuilder_sc",
     };
     const [message, setMessage] = useState("");
-    const serverURL = "http://localhost:4000"
+    const serverURL = "https://deploynt208backend.onrender.com"
     // Renders errors or successfull transactions on the screen.
     function Message({ content }) {
         return <p>{content}</p>;

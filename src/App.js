@@ -43,23 +43,23 @@ function App() {
         {isAdmin ? <AdminNavBar /> : <Navbar />}
         {isAdmin ? <AdminSidebar /> : <></>}
         <Routes>
-          <Route path="/addproduct" element={<AdminAddProduct />} />
-          <Route path="/listproduct" element={<AdminListProduct />} />
-          <Route path="/adminchatpage" element={<AdminChatPage />} />
-          <Route path="/admincheckorder" element={<AdminCheckOrder />} />
+          <Route path="addproduct" element={<AdminAddProduct />} />
+          <Route path="listproduct" element={<AdminListProduct />} />
+          <Route path="adminchatpage" element={<AdminChatPage />} />
+          <Route path="admincheckorder" element={<AdminCheckOrder />} />
           <Route path="/" element={<Shop />} />
           {/* <Route path='/admin' element={<AdminPage/>}/> */}
 
           <Route
-            path="/watches"
+            path="watches"
             element={<SearchProductPage banner={jeremybudimanunsplash} />}
           />
           <Route
-            path="/womens"
+            path="womens"
             element={<SearchProductPage banner={women_banner} />}
           />
           <Route
-            path="/kids"
+            path="kids"
             element={<SearchProductPage banner={kids_banner} />}
           />
           <Route path="product">
@@ -68,13 +68,13 @@ function App() {
           <Route path="updateproduct">
             <Route path=":productId" element={<AdminUpdateProductPage />} />
           </Route>
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/chatpage" element={<ChatPage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/profile/:activepage" element={<UserProfile />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path="/orderpage" element={<OrderPage />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="chatpage" element={<ChatPage />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="profile/:activepage" element={<UserProfile />} />
+          <Route path="checkout" element={<CheckoutPage />} />
+          <Route path="orderpage" element={<OrderPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
