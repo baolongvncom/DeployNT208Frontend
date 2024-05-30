@@ -9,6 +9,7 @@ const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState([]);
     const [totalCartAmount, setTotalCartAmount] = useState(0);
     const [orderList, setOrderList] = useState([]);
+    const [allOrders, setAllOrders] = useState([]);
 
     useEffect(()=>{
         fetch('https://deploynt208backend.onrender.com/allproducts')
@@ -46,6 +47,15 @@ const ShopContextProvider = (props) => {
                 },
             }).then((response)=>response.json())
             .then((data)=>setOrderList(data));
+
+            fetch('https://deploynt208backend.onrender.com/getallorder',{
+                method:'GET',
+                headers:{
+                    Accept:'application/form-data',
+                    'Content-Type':'application/json',
+                },
+            }).then((response)=>response.json())
+            .then((data)=>setAllOrders(data));
         }
     },[])
 
@@ -153,7 +163,7 @@ const ShopContextProvider = (props) => {
         return searchResult;
     }
 
-    const contextValue = {User, getTotalCartItems, getTotalCartAmount, all_product, cartItems, addToCart, removeFromCart, removeAllFromCart, searchProduct, totalCartAmount, orderList, getTotalOrderItems}
+    const contextValue = {User, getTotalCartItems, getTotalCartAmount, all_product, cartItems, addToCart, removeFromCart, removeAllFromCart, searchProduct, totalCartAmount, orderList, getTotalOrderItems, allOrders}
     return(
         <ShopContext.Provider value={contextValue}>
             {props.children}

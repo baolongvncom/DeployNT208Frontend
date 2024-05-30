@@ -14,32 +14,32 @@ const AdminCheckOrder = () => {
     },
   };
 
-  const {all_product} = useContext(ShopContext);
+  const {all_product, allOrders} = useContext(ShopContext);
   const [viewOrderProduct, setViewOrderProduct] = useState({products: {}});
 
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const [allOrders, setAllOrders] = useState([]);
+  // const [allOrders, setAllOrders] = useState([]);
 
-  const getAllOrders = async () => {
-    const response = await fetch("https://deploynt208backend.onrender.com/getallorder", {
-      method: "GET",
-      headers: {
-        Accept: "application/form-data",
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response.json();
-    setAllOrders(data);
-  };
+  // const getAllOrders = async () => {
+  //   const response = await fetch("https://deploynt208backend.onrender.com/getallorder", {
+  //     method: "GET",
+  //     headers: {
+  //       Accept: "application/form-data",
+  //       "Content-Type": "application/json",
+  //     },
+  //   });
+  //   const data = await response.json();
+  //   setAllOrders(data);
+  // };
 
-  useEffect(() => async () => {
-    await getAllOrders();
-  }, []);
+  // useEffect(() => async () => {
+  //   await getAllOrders();
+  // }, []);
 
-  useEffect(() => {
-    console.log("allOrders: ", allOrders);
-  }, [allOrders]);
+  // useEffect(() => {
+  //   console.log("allOrders: ", allOrders);
+  // }, [allOrders]);
 
   const handleOpenModal = (orderProducts) => {
     if (orderProducts) {
