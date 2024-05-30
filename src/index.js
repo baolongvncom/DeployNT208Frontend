@@ -6,6 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import  ShopContextProvider  from './Context/ShopContext';
 import MessageContextProvider from './Context/MessageContext';
 import AuthenticationContextProvider  from './Context/AuthenticationContext';
+import { disableReactDevTools } from '@fvilers/disable-react-devtools';
+
+if (process.env.NODE_ENV === 'production') {
+  disableReactDevTools();
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

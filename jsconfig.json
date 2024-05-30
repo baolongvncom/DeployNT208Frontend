@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-      "baseUrl": ".",
+      "baseUrl": "https://nt208frontend-api.onrender.com",
       "paths": {
         "@/*": ["./*"]
       }
