@@ -87,7 +87,7 @@ const OrderPage = () => {
             <p>{order.fullname}</p>
             <p>{order.time}</p>
             <p>{order.status}</p>
-            <p>{order.total}</p>
+            <p>${order.total}</p>
             <Button onClick={()=>handleOpenModal(order)}>View</Button>
           </div>
           })}

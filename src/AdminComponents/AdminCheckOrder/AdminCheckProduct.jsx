@@ -95,7 +95,7 @@ const AdminCheckOrder = () => {
         </div>
             <p>Fullname:  {orders.fullname}</p>
             <p>Time:  {orders.time}</p>
-            <p>Total:  {orders.total}</p>
+            <p>Total:  ${orders.total}</p>
             <p>Status:  {orders.status}</p>
         <table className='modal-table'>
                 <thead>
@@ -150,7 +150,7 @@ const AdminCheckOrder = () => {
                 {order.id}
               </th>
               <td>{order.fullname}</td>
-              <td>{order.total}</td>
+              <td>${order.total}</td>
               <td>{order.payment}</td>
               <td>{order.status}</td>
               <td>
