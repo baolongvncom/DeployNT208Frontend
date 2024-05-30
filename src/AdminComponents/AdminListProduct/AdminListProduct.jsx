@@ -31,6 +31,8 @@ const AdminListProduct = () => {
       },
       body:JSON.stringify({id:product_id})
     })
+    .then((response)=>response.json())
+    .then((data)=>console.log(data));
     await fetchProducts();
   }
 
