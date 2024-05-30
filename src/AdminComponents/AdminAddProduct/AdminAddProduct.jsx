@@ -64,7 +64,6 @@ const AdminAddProduct = () => {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
-                'auth-token':`${localStorage.getItem('auth-token')}`,
             },
             body: formData,
         }).then((response) => response.json()).then((data) => {responseData = data}).catch((err) => console.log(err));
@@ -79,7 +78,6 @@ const AdminAddProduct = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'auth-token':`${localStorage.getItem('auth-token')}`,
                     Accept: 'application/json',
                 },
                 body: JSON.stringify(product)
