@@ -26,7 +26,6 @@ const AdminCheckOrder = () => {
       method: "GET",
       headers: {
         Accept: "application/form-data",
-        "auth-token": `${localStorage.getItem("auth-token")}`,
         "Content-Type": "application/json",
       },
     });
@@ -54,7 +53,6 @@ const AdminCheckOrder = () => {
       method: "POST",
       headers: {
         Accept: "application/form-data",
-        "auth-token": `${localStorage.getItem("auth-token")}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ id: id }),
