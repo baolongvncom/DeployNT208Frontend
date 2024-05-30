@@ -21,6 +21,7 @@ const AdminListProduct = () => {
   }, [])
 
   const remove_product = async (product_id)=> {
+    console.log("press remove product button");
     await fetch('https://deploynt208backend.onrender.com/removeproduct',{
       method:'POST',
       headers:{
