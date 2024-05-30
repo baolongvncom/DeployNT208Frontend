@@ -30,6 +30,7 @@ const AdminCheckOrder = () => {
       },
     });
     const data = await response.json();
+    console.log("getallorder data: ", data);
     setAllOrders(data);
   };
 
