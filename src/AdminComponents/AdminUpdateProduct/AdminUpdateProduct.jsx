@@ -107,7 +107,7 @@ const AdminUpdateProductPage = () => {
             deleteResponse = {success: true};
         }
 
-        if (responseData.success && deleteResponse.success) 
+        if (responseData.success) 
         {
             updatedProduct.image = responseData.image_url;
             const image_filename = responseData.image_url.substring(responseData.image_url.lastIndexOf('/') + 1);
