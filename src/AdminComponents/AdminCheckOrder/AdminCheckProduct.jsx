@@ -95,6 +95,7 @@ const AdminCheckOrder = () => {
         </div>
             <p>Fullname:  {orders.fullname}</p>
             <p>Time:  {orders.time}</p>
+            <p>Address:  {orders.address}</p>
             <p>Total:  ${orders.total}</p>
             <p>Status:  {orders.status}</p>
         <table className='modal-table'>
