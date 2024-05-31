@@ -63,12 +63,12 @@ const HomePage = (props) => {
 
     formData.append("query_img", e.target.files[0]);
 
-    await fetch("https://deploynt208backend.onrender.com/imagesearch", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => setViewProductIds(data.scores));
+    // await fetch("https://deploynt208backend.onrender.com/imagesearch", {
+    //   method: "POST",
+    //   body: formData,
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => setViewProductIds(data.scores));
   };
 
 

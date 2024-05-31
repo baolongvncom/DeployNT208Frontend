@@ -24,13 +24,13 @@ const RelatedProducts = (imageUrl) => {
     // Append the blob to the formData
     formData.append("query_img", blob, "image.png");
 
-    await fetch("https://deploynt208backend.onrender.com/imagesearch", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => setViewProductIds(data.scores))
-      .then(() => console.log(viewProductIds));
+    // await fetch("https://deploynt208backend.onrender.com/imagesearch", {
+    //   method: "POST",
+    //   body: formData,
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => setViewProductIds(data.scores))
+    //   .then(() => console.log(viewProductIds));
   }
 
   return (
