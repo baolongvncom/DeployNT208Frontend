@@ -53,6 +53,20 @@ const AdminAddProduct = () => {
             return;
         }
 
+        // Resize image to 1000x1000
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+        img.src = URL.createObjectURL(image);
+        img.onload = () => {
+            canvas.width = 1000;
+            canvas.height = 1000;
+            ctx.drawImage(img, 0, 0, 1000, 1000);
+            canvas.toBlob((blob) => {
+                setImage(blob);
+            }, 'image/jpeg', 1);
+        }
+
         console.log(productDetail);
         let responseData;
         let product = productDetail;
@@ -85,17 +99,17 @@ const AdminAddProduct = () => {
                 data.success?alert('Product added successfully'):alert('Product not added')
             }).catch((err) => console.log(err));
 
-            // retrain model
-            await fetch('https://deploynt208backend.onrender.com/retrain', {
-                method: 'POST',
-                body: JSON.stringify({image_filename: image_filename}),
-                headers: {
-                    'Content-Type': 'application/json',
-                    Accept: 'application/json',
-                }
-            }).then((response) => response.json()).then((data) => {
-                console.log(data.status);
-            }).catch((err) => console.log(err));
+            // // retrain model
+            // await fetch('https://deploynt208backend.onrender.com/retrain', {
+            //     method: 'POST',
+            //     body: JSON.stringify({image_filename: image_filename}),
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //         Accept: 'application/json',
+            //     }
+            // }).then((response) => response.json()).then((data) => {
+            //     console.log(data.status);
+            // }).catch((err) => console.log(err));
         }
     }
     
