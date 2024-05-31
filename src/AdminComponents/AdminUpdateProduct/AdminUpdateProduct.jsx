@@ -61,6 +61,21 @@ const AdminUpdateProductPage = () => {
 
         if (image)
         {   let formData = new FormData();
+
+            // Resize image to 1000x1000
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            img.src = URL.createObjectURL(image);
+            img.onload = () => {
+                canvas.width = 1000;
+                canvas.height = 1000;
+                ctx.drawImage(img, 0, 0, 1000, 1000);
+                canvas.toBlob((blob) => {
+                    setImage(blob);
+                }, 'image/jpeg', 1);
+            }
+
             formData.append('product', image);
 
             await fetch('https://deploynt208backend.onrender.com/upload', {
@@ -72,19 +87,19 @@ const AdminUpdateProductPage = () => {
                 body: formData,
             }).then((response) => response.json()).then((data) => {responseData = data}).catch((err) => console.log(err));
 
-            // Delete old image
-            if (responseData.success)
-            {
-                await fetch('https://deploynt208backend.onrender.com/deleteimage', {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'auth-token':`${localStorage.getItem('auth-token')}`,
-                        Accept: 'application/json',
-                    },
-                    body: JSON.stringify({'image': product.image})
-                }).then((response) => response.json()).then((data) => {deleteResponse = data}).catch((err) => console.log(err));
-            }
+            // // Delete old image
+            // if (responseData.success)
+            // {
+            //     await fetch('https://deploynt208backend.onrender.com/deleteimage', {
+            //         method: 'DELETE',
+            //         headers: {
+            //             'Content-Type': 'application/json',
+            //             'auth-token':`${localStorage.getItem('auth-token')}`,
+            //             Accept: 'application/json',
+            //         },
+            //         body: JSON.stringify({'image': product.image})
+            //     }).then((response) => response.json()).then((data) => {deleteResponse = data}).catch((err) => console.log(err));
+            // }
         }
         else
         {
@@ -110,19 +125,19 @@ const AdminUpdateProductPage = () => {
             }).catch((err) => console.log(err));
 
             // retrain model
-            if (image)
-                {
-                    await fetch('https://deploynt208backend.onrender.com/retrain', {
-                        method: 'POST',
-                        body: JSON.stringify({image_filename: image_filename}),
-                        headers: {
-                            'Content-Type': 'application/json',
-                            Accept: 'application/json',
-                        }
-                    }).then((response) => response.json()).then((data) => {
-                        console.log(data.status);
-                    }).catch((err) => console.log(err));
-                }
+            // if (image)
+            //     {
+            //         await fetch('https://deploynt208backend.onrender.com/retrain', {
+            //             method: 'POST',
+            //             body: JSON.stringify({image_filename: image_filename}),
+            //             headers: {
+            //                 'Content-Type': 'application/json',
+            //                 Accept: 'application/json',
+            //             }
+            //         }).then((response) => response.json()).then((data) => {
+            //             console.log(data.status);
+            //         }).catch((err) => console.log(err));
+            //     }
             // reload page
             window.location.reload();
         }
